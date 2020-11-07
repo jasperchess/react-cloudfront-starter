@@ -1,0 +1,13 @@
+service: serverless-react
+provider:
+  name: aws
+  region: eu-west-1
+  runtime: nodejs12.x
+
+functions:
+
+resources:
+  # S3
+  - ${file(resources/s3-bucket.yml)}
+  # CloudFront
+  - ${file(resources/cloudfront.yml)}
