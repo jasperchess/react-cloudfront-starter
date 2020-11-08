@@ -10,6 +10,8 @@ yarn build --if-present
 sudo yarn global add serverless
 serverless deploy -s dev
 
+echo "${GITHUB_REF}@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+
 BUCKET=$(read_var WebSiteBucket .env)
 echo "---------------- Publishing to bucket ${BUCKET} ----------------"
 aws s3 sync build/ "s3://${BUCKET}" --acl public-read
