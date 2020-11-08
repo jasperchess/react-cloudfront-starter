@@ -157,6 +157,11 @@
             "Value": {
               "Ref": "Website"
             }
+          },
+          "DistributionID": {
+            "Value": {
+              "Ref": "Distribution"
+            }
           }
         }
       },
@@ -230,7 +235,8 @@
     },
     "custom": {
       "exportOutputs": [
-        "WebSiteBucket"
+        "WebSiteBucket",
+        "DistributionID"
       ]
     },
     "plugins": [
@@ -322,6 +328,11 @@
         "WebSiteBucket": {
           "Value": {
             "Ref": "Website"
+          }
+        },
+        "DistributionID": {
+          "Value": {
+            "Ref": "Distribution"
           }
         }
       }
@@ -434,6 +445,13 @@
                 }
               }
             }
+          },
+          "Outputs": {
+            "DistributionID": {
+              "Value": {
+                "Ref": "Distribution"
+              }
+            }
           }
         }
       ]
@@ -441,7 +459,7 @@
     "isDashboardMonitoringPreconfigured": false
   },
   "package": {
-    "artifactDirectoryName": "serverless/serverless-react/dev/1604816750264-2020-11-08T06:25:50.264Z",
+    "artifactDirectoryName": "serverless/serverless-react/dev/1604826678784-2020-11-08T09:11:18.784Z",
     "artifact": ""
   }
 }

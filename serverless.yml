@@ -10,6 +10,7 @@ plugins:
 custom:
   exportOutputs: # if not provided, all outputs are exported
     - WebSiteBucket
+    - DistributionID
 
 functions:
 
