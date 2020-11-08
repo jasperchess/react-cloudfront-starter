@@ -6,6 +6,7 @@ Resources:
         Origins:
           - # Use the Website as the CDN origin
             DomainName: !GetAtt Website.DomainName
+            Id: !Ref Website
             CustomOriginConfig:
               HTTPPort: 80
               HTTPSPort: 443
