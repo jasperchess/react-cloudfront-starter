@@ -4,7 +4,6 @@ read_var() {
     echo ${VAR[1]}
 }
 
-BUCKET=$(read_var WebSiteBucket .env)
 
 yarn --frozen-lockfile
 yarn build --if-present
@@ -14,5 +13,6 @@ sudo ./aws/install
 aws --version
 sudo yarn global add serverless
 serverless deploy -s dev
-chmod +x ./scripts/deploy.sh
+BUCKET=$(read_var WebSiteBucket .env)
+echo "${BUCKET}@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
 aws s3 sync build/ "s3://${BUCKET}" --acl public-read
