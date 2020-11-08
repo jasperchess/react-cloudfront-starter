@@ -5,7 +5,7 @@ Resources:
       DistributionConfig:
         Origins:
           - # Use the Website as the CDN origin
-            DomainName: !GetAtt Website.DomainName
+            DomainName: !GetAtt Website.WebsiteURL
             Id: !Ref Website
             CustomOriginConfig:
               HTTPPort: 80
