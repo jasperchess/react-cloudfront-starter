@@ -1,18 +1,16 @@
 service: serverless-react
 provider:
   name: aws
-  region: eu-west-1
+  region: us-east-1
   runtime: nodejs12.x
 
 plugins:
   - serverless-export-outputs
 
 custom:
-  exportOutputs: # if not provided, all outputs are exported
+  exportOutputs:
     - WebSiteBucket
     - DistributionID
-
-functions:
 
 resources:
   # S3
