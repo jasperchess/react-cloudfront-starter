@@ -16,4 +16,4 @@ aws s3 sync build/ "s3://${BUCKET}" --acl public-read
 
 DISTRIBUTION=$(read_var DistributionID .env)
 echo "---------------- Invalidating ${DISTRIBUTION} cache ----------------"
-aws cloudfront create-invalidation --distribution-id "${DISTRIBUTION}" --paths *
+aws cloudfront create-invalidation --distribution-id "${DISTRIBUTION}" --paths "*"
