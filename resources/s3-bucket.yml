@@ -5,6 +5,7 @@ Resources:
       WebsiteConfiguration:
         ErrorDocument: index.html
         IndexDocument: index.html
+
 Outputs:
   WebSiteUrl:
     Value: { "Fn::GetAtt": [Website, WebsiteURL] }
