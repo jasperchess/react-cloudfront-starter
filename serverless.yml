@@ -4,6 +4,13 @@ provider:
   region: eu-west-1
   runtime: nodejs12.x
 
+plugins:
+  - serverless-export-outputs
+
+custom:
+  exportOutputs: # if not provided, all outputs are exported
+    - WebSiteBucket
+
 functions:
 
 resources:

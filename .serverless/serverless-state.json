@@ -228,6 +228,14 @@
         }
       }
     },
+    "custom": {
+      "exportOutputs": [
+        "WebSiteBucket"
+      ]
+    },
+    "plugins": [
+      "serverless-export-outputs"
+    ],
     "pluginsData": {},
     "functions": {},
     "resources": {
@@ -328,6 +336,12 @@
         "region": "eu-west-1",
         "runtime": "nodejs12.x"
       },
+      "plugins": {
+        "$ref": "$[\"service\"][\"plugins\"]"
+      },
+      "custom": {
+        "$ref": "$[\"service\"][\"custom\"]"
+      },
       "functions": null,
       "resources": [
         {
@@ -427,7 +441,7 @@
     "isDashboardMonitoringPreconfigured": false
   },
   "package": {
-    "artifactDirectoryName": "serverless/serverless-react/dev/1604765000151-2020-11-07T16:03:20.151Z",
+    "artifactDirectoryName": "serverless/serverless-react/dev/1604816750264-2020-11-08T06:25:50.264Z",
     "artifact": ""
   }
 }

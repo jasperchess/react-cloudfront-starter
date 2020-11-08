@@ -24,5 +24,10 @@ jobs:
       - run: yarn build --if-present
       - run: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
       - run: unzip awscliv2.zip
+      - run: yarn global add serverless
       - run: sudo ./aws/install
       - run: aws --version
+      - run: serverless deploy -s dev
+      - run: chmod +x ./scripts/deploy.sh
+      - run: BUCKET=$(./scripts/deploy.sh)
+      - run: aws s3 sync build/ "s3://${BUCKET}" --acl public-read
