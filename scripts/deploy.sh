@@ -4,13 +4,14 @@ read_var() {
     echo ${VAR[1]}
 }
 
-
+echo "---------------- Prepare build ----------------"
 yarn --frozen-lockfile
 yarn build --if-present
-sudo yarn global add serverless
-serverless deploy -s dev
 
-echo "${GITHUB_REF}@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+echo "---------------- Creating Cloudformation Stack ----------------"
+sudo yarn global add serverless
+BRANCH=$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
+serverless deploy -s "${BRANCH}"
 
 BUCKET=$(read_var WebSiteBucket .env)
 echo "---------------- Publishing to bucket ${BUCKET} ----------------"
